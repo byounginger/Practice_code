@@ -420,6 +420,28 @@ specified character.
 https://www.w3resource.com/python-exercises
 https://www.w3resource.com/python'''
 
+def extractor(words, char):
+    
+    new = words.split(char)
+    
+    return str(new[0])
 
+extractor('https://www.w3resource.com/python-exercises','-')
 
+'''20. Write a Python function to reverses a string if it's length is a 
+multiple of 4.'''
+
+def reverser(word):
+    
+    if len(word) % 4 == 0:
+        
+        mt = ''
+        
+        for i in word:
+            mt = i + mt
+        
+        return mt
+
+reverser('horse')
+reverser('hosenose')
 
