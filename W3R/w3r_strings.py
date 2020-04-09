@@ -445,3 +445,31 @@ def reverser(word):
 reverser('horse')
 reverser('hosenose')
 
+## Their solution:
+
+def reverser(word):
+    
+    if len(word) % 4 == 0:
+        
+        return ''.join(reversed(word))
+    
+    return word
+
+'''21. Write a Python function to convert a given string to all uppercase if 
+it contains at least 2 uppercase characters in the first 4 characters.'''
+
+def earlyupper(word):
+    
+    if sum(word[0:5].isupper()) > 1:
+        
+        return word.upper()
+
+sample = 'AbCdefg'
+
+earlyupper(sample)
+
+sample.upper()
+
+sample[0:5]
+
+
