@@ -336,5 +336,43 @@ yearly
 
 ## CH 4 ##
 
+file_path = 'Summer Olympic medalists 1896 to 2008 - EDITIONS.tsv'
+
+editions = pd.read_csv(file_path, sep = '\t')
+
+editions.columns
+
+editions = editions[['Edition', 'Grand Total', 'City', 'Country']]
+
+## Loading IOC codes DataFrame
+
+file_path2 = 'Summer Olympic medalists 1896 to 2008 - IOC COUNTRY CODES.csv'
+
+ioc_codes = pd.read_csv(file_path2)
+
+ioc_codes.columns
+
+ioc_codes = ioc_codes[['Country', 'NOC']]
+
+## Building medals DataFrame
+
+medals_dict = {}
+
+for year in editions['Edition']:
+    
+    file_path = 'summer_{:d}.csv'.format(year)
+    
+    medals_dict[year] = pd.read_csv(file_path)
+    
+    medals_dict[year] = medals_dict[year][['Athlete', 'NOC', 'Medal']]
+    
+    medals_dict[year]['Edition'] = year
+    
+medals = pd.concat(medals_dict, ignore_index=True)
+
+
+
+
+
 
 
