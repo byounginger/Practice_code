@@ -460,16 +460,29 @@ it contains at least 2 uppercase characters in the first 4 characters.'''
 
 def earlyupper(word):
     
-    if sum(word[0:5].isupper()) > 1:
+    new_sum = 0
+    word2 = list(word)
+    
+    for i in word2[0:5]:
+        
+        if i.isupper():
+            
+            new_sum += 1 
+    
+    if new_sum >= 2:
         
         return word.upper()
-
+    
+    else:
+        
+        return word
+    
 sample = 'AbCdefg'
 
 earlyupper(sample)
 
-sample.upper()
 
-sample[0:5]
+
+
 
 
