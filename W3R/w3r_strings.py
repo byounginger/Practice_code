@@ -481,8 +481,93 @@ sample = 'AbCdefg'
 
 earlyupper(sample)
 
+## Their solution:
 
+def earlyupper2(word):
+    
+    new_sum = 0
+    for i in word[:5]:
+        if i.upper() == i:
+            new_sum += 1
+    if new_sum >= 2:
+        return word.upper()
+    return word
 
+earlyupper2(sample)
 
+'''22.Write a Python program to sort a string lexicographically.'''
 
+def alphabets(word):
+    
+    word2 = list(word.lower())
+    word2.sort()
+    word3 = ''.join(word2)
+    print(word3)
+
+example = 'Salubrious'
+
+alphabets(example)
+
+## Their solution
+
+def alphabets(word):
+    
+    return sorted(sorted(word), key=str.upper)
+
+alphabets(example)
+
+'''23. Write a Python program to remove a newline in Python.'''
+
+def lineup(words):
+    
+    words = words.replace('\n', '')
+    print(words)
+    
+sample = 'This is a really long string\nwith multiple\nlinending chars'
+
+lineup(sample)
+
+## Their example
+
+print(sample.rstrip()) # This only works with end-of-line characters
+
+'''24. Write a Python program to check whether a string starts with 
+specified characters.'''
+
+def checker(word, chars):
+    
+    ex = len(chars)
+    print(word[:ex] == chars)
+
+checker('outstanding', 'outie')
+
+# Their solution:
+
+sample = 'outstanding'
+print(sample.startswith('out'))
+
+'''25. Write a Python program to create a Caesar encryption.
+Note : In cryptography, a Caesar cipher, also known as Caesar's cipher, 
+the shift cipher, Caesar's code or Caesar shift, is one of the simplest 
+and most widely known encryption techniques. It is a type of 
+substitution cipher in which each letter in the plaintext is replaced 
+by a letter some fixed number of positions down the alphabet. For 
+example, with a left shift of 3, D would be replaced by A, E would 
+become B, and so on. The method is named after Julius Caesar, who used 
+it in his private correspondence.'''
+
+print(chr(97))
+
+#65-90 & 97-122
+
+def caesar(words, shift):
+    
+    words = [ord(i) for i in words]
+    words = [j+shift for j in words]
+    words = [chr(k) for k in words]
+    return ''.join(words)
+
+sample = "In cryptography, a Caesar cipher, also known as Caesar's"
+new_sample = caesar(sample, 2)
+caesar(new_sample, -2)
 
