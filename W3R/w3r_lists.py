@@ -7,7 +7,7 @@ Created on Mon May 11 16:47:30 2020
 
 Lists from w3s:
     
-https://www.w3resource.com/python-exercises/string/
+https://www.w3resource.com/python-exercises/list/
 
 """
 
@@ -68,4 +68,36 @@ weird(sample_list)
 Sample List : [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
 Expected Result : [(2, 1), (1, 2), (2, 3), (4, 4), (2, 5)]'''
 
+def sordid(lstolst):
+    
+    return sorted(sample_list, key = lambda sample_list: sample_list[1])
+    
+
+sample_list = [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)]
+sordid(sample_list)
+
+'''7. Write a Python program to remove duplicates from a list.'''
+
+def duped(lst):
+    
+    return list(set(lst))
+
+sample_list = [1,2,4,3,2,3,4,6,5,4,5,4,3,2, 'ab', 'abc', 'ab']
+duped(sample_list)
+
+'''8. Write a Python program to check if a list is empty or not.'''
+
+def emptee(lst):
+    
+    if len(lst) == 0:
+        print('The list is empty')
+        
+    else:
+        return lst
+
+empty_list = []
+sample_list = [1,2,4,3,2,3,4,6,5,4,5,4,3,2]
+
+emptee(empty_list)
+emptee(sample_list)
 
