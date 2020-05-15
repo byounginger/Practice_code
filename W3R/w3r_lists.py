@@ -101,3 +101,59 @@ sample_list = [1,2,4,3,2,3,4,6,5,4,5,4,3,2]
 emptee(empty_list)
 emptee(sample_list)
 
+'''9. Write a Python program to clone or copy a list.'''
+
+def drone(lst):
+    
+    print(lst,lst)
+    
+sample_list = [1,2,4,3,2,3,4,6,5,4,5,4,3,2]
+
+drone(sample_list)
+
+'''10. Write a Python program to find the list of words that are longer than n from a given list of words.'''
+
+def verbose(lst, n):
+    
+    '''Finds a list of words that are longer than n'''
+    
+    empty_list = []
+    
+    for i in lst:
+        
+        if len(i) > n:
+            
+            empty_list.append(i) # Don't forget append method for list of strings
+            
+    return empty_list
+
+sample_list = ['apples', 'origins', 'oranges', 'plums', 'san', 'red']
+
+verbose(sample_list, 3)
+
+'''11. Write a Python function that takes two lists and returns True if they have at least one common member.'''
+
+def comparerer(lst1, lst2):
+    
+    '''takes two lists and returns True if they have at least one common member'''
+    
+    for i in lst1:
+        
+        for j in lst2:
+
+            if j == i:
+                
+                return 'True'
+            
+            else:
+                
+                return 'False'
+
+sample1 = ['Hey', 'oh', 'we', 'got', 'big', 'Gretch']
+sample2 = ['That', 'woman', 'from', 'Michigan', 'Gretch']
+
+comparerer(sample1, sample2)
+
+
+
+    
