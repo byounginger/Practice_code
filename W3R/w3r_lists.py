@@ -137,23 +137,48 @@ def comparerer(lst1, lst2):
     
     '''takes two lists and returns True if they have at least one common member'''
     
+    result = False
+    
     for i in lst1:
         
         for j in lst2:
 
-            if j == i:
+            if i == j:
                 
-                return 'True'
+                result = True
+                
+                return result
             
-            else:
-                
-                return 'False'
 
 sample1 = ['Hey', 'oh', 'we', 'got', 'big', 'Gretch']
-sample2 = ['That', 'woman', 'from', 'Michigan', 'Gretch']
+sample2 = ['That', 'woman', 'from', 'Michigan', 'Gretchen']
 
 comparerer(sample1, sample2)
 
+'''12. Write a Python program to print a specified list after removing the 0th, 4th and 5th elements.'''
 
+sample_list=['Hey', 'oh', 'we', 'got', 'big', 'Gretch', 'That', 'woman', 'from', 'Michigan', 'Gretchen']
 
+def remover(lst):
     
+    lst.pop(5)
+    lst.pop(4)
+    lst.pop(0)    
+    
+    return lst
+
+remover(sample_list)
+
+# Their solution:
+
+sample_list=['Hey', 'oh', 'we', 'got', 'big', 'Gretch', 'That', 'woman', 'from', 'Michigan', 'Gretchen']
+
+sample_list=[x for (i,x) in enumerate(sample_list) if i not in (0,4,5)]
+sample_list    
+
+'''13. Write a Python program to generate a 3*4*6 3D array whose each element is *.'''
+
+some_array = [[['*' for i in range(3)] for j in range(4)] for k in range(6)]
+
+some_array
+
