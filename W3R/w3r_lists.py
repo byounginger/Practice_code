@@ -182,3 +182,85 @@ some_array = [[['*' for i in range(3)] for j in range(4)] for k in range(6)]
 
 some_array
 
+'''14. Write a Python program to print the numbers of a specified list after removing even numbers from it.'''
+
+def even_remover(lst):
+    
+    empty_list = []
+    
+    for i in lst:
+        
+        if i % 2 != 0:
+            
+            empty_list.append(i)
+            
+    return empty_list
+
+sample_list = [1,2,3,4,5,6,7,8,9]
+
+even_remover(sample_list)
+
+## List comprehension method:
+
+print([i for i in sample_list if i%2 != 0])
+
+'''15. Write a Python program to shuffle and print a specified list.'''
+
+import random
+
+## Or from random import shuffle
+
+random.shuffle(sample_list)
+
+print(sample_list)
+
+'''16. Write a Python program to generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30 (both included)'''
+
+def sq_bear(lst):
+    
+    '''generate and print a list of first and last 5 elements where the values are square of numbers between 1 and 30'''
+    
+    matcher = [x**2 for x in range(30)]
+    
+    new_list = []
+    
+    for i in lst[0:5]:
+        
+        if i in matcher:
+        
+            new_list.append(i)
+        
+    for j in lst[-5:]:
+        
+        if j in matcher:
+        
+            new_list.append(j)
+        
+    return new_list
+        
+sample_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]       
+    
+sq_bear(sample_list)
+
+'''17. Write a Python program to generate and print a list except for the first 5 elements, where the values are square of numbers between 1 and 30 (both included).'''
+
+def even_stranger(lst):
+    
+    empty_list = []
+    
+    lst2 = lst[6:]
+    
+    for i in lst2:
+    
+        if i <= 30:
+        
+            empty_list.append([i**2 for i in lst2])
+    
+    return empty_list
+
+sample_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+
+even_stranger(sample_list)
+
+## Come back to this ^ 
+
