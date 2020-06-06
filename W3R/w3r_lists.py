@@ -246,21 +246,73 @@ sq_bear(sample_list)
 
 def even_stranger(lst):
     
-    empty_list = []
-    
-    lst2 = lst[6:]
-    
-    for i in lst2:
-    
-        if i <= 30:
-        
-            empty_list.append([i**2 for i in lst2])
-    
-    return empty_list
+    print([i**2 for i in lst[5:]])
 
 sample_list = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 
 even_stranger(sample_list)
 
-## Come back to this ^ 
+'''18. Write a Python program to generate all permutations of a list in Python.'''
+
+def permuter(lst):
+    
+    empty_list = []
+    
+    for i in range(len(lst)):
+        
+        m = lst[i]
+        
+        p = lst[:i] + lst[i+1:]
+        
+        empty_list.append([m] + p)
+    
+    return empty_list
+  
+sample_list = [1,2,3,4,5]
+
+permuter(sample_list)
+
+# Their solution:
+
+import itertools
+
+print(list(itertools.permutations([1,2,3,4,5])))
+
+# Different solutions and results!
+    # Itertools version actually has all permutations since the order
+        # of the permuted list is what matters
+
+'''19. Write a Python program to get the difference between the two lists.'''
+
+def differ(lst1, lst2):
+    
+    empty_list = []
+    
+    for i in range(len(lst1)):
+        
+        diff = lst1[i] - lst2[i]
+        
+        empty_list.append(diff)
+    
+    return empty_list
+
+samA = [3,5,4,6,3,4,5]
+samB = [5,4,3,5,6,7,6,15,17,43]
+
+differ(samA, samB)
+
+# Not what I expected for difference in lists in their solution! 
+
+def differ(lst1, lst2):
+     
+    diff_a_b = list(set(lst1) - set(lst2))
+    diff_b_a = list(set(lst2) - set(lst1))
+    
+    new_list = diff_a_b + diff_b_a
+    
+    return new_list
+
+differ(samA, samB)
+
+
 
