@@ -314,5 +314,48 @@ def differ(lst1, lst2):
 
 differ(samA, samB)
 
+'''20. Write a Python program access the index of a list.'''
+
+def dexer(lst, num):
+    
+    for i in lst:
+        
+        if i == num:
+            
+            print(lst.index(i))
+
+
+dexer(samB, 15)
+
+# Their solution (enumerate the list)
+
+def dexer(lst):
+    
+    for i, j in enumerate(lst):
+        
+        print(i, j)
+        
+dexer(samB)
+
+'''21. Write a Python program to convert a list of characters into a string.'''
+
+def strips(lst):
+    
+    return "".join(lst)
+
+samA = ['t','h','i','s','l','i','s','t','a','c','t','u','a','l','l','y','m','e','a','n','s','s','o','m','e','t','h','i','n','g']
+
+strips(samA)
+
+'''22. Write a Python program to find the index of an item in a specified list.'''
+
+# This is what I originally wrote for #20, I think
+
+def dexer(lst, let):
+    
+    print(lst.index(let))
+            
+dexer(samA, 'i')
+
 
 
