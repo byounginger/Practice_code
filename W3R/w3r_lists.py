@@ -357,5 +357,54 @@ def dexer(lst, let):
             
 dexer(samA, 'i')
 
+'''23. Write a Python program to flatten a shallow list.'''
+
+example = [[5,10,15,20], [10,20,30,40], [45,46,47,48]]
+
+def flatter(lst):
+    
+    new_list = []
+    
+    for sublist in lst:
+        
+        for i in sublist:
+            
+            new_list.append(i)
+    
+    return new_list
+
+flatter(example)
+
+## Another option:
+
+import itertools
+
+flatlist = list(itertools.chain(*example))
+
+flatlist
+
+'''24. Write a Python program to append a list to the second list.'''
+
+lstA = [1,2,4,4,6,7,5,4,3,9]
+lstB = [4,3,2,1,6,5,4]
+
+def upender(lstA, lstB):
+    
+    return lstB + lstA
+
+upender(lstA, lstB)
+
+'''25. Write a Python program to select an item randomly from a list.'''
+
+import random
+
+def chooser(lst):
+    
+    i = random.choice(lst)
+    
+    return i
+
+chooser(lstA)
+
 
 
