@@ -406,5 +406,41 @@ def chooser(lst):
 
 chooser(lstA)
 
+'''26. Write a python program to check whether two lists are circularly identical.'''
 
+'''I think this means one list is the opposite orientation of another'''
+
+lstA = [1,2,4,4,6,7,5,4,3,9]
+lstB = [4,3,2,1,6,5,4]
+
+lstA2 = [1,2,3,4,5,6,7,8]
+lstB2 = [8,7,6,5,4,3,2,1]
+
+def circleornot(lsta, lstb):
+    
+    lstb.reverse()
+    
+    if lsta == lstb:
+        
+        return True
+    
+
+
+circleornot(lstA, lstB)
+circleornot(lstA2, lstB2)
+
+# Their solution:
+
+lstA3 = [10, 10, 10, 0, 0, 10]
+lstB3 = [10, 10, 10, 10, 0, 0]
+lstC3 = [1, 10, 10, 0, 0, 10]
+
+def circleornot(lsta, lstb, lstc):
+    
+    print('List A vs. B:')
+    print(' '.join(map(str, lstb)) in ' '.join(map(str, lsta * 2)))
+    print('List A vs. C')
+    print(' '.join(map(str, lstc)) in ' '.join(map(str, lsta * 2)))
+    
+circleornot(lstA3, lstB3, lstC3)
 
